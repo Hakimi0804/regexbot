@@ -7,7 +7,7 @@ from telethon import TelegramClient, events
 SED_PATTERN = r'^s/((?:\\\S|[^/])+)/((?:\\\S|[^/])*)(/.*)?'
 GROUP0_RE = re.compile(r'(?<!\\)((?:\\\\)*)\\0')
 
-bot = TelegramClient(None, 6, 'eb06d4abfb49dc3eeb1aeb98ae0f581e')
+bot = TelegramClient(None, int(os.getenv("API_ID")), os.getenv("API_HASH"))
 bot.parse_mode = None
 
 last_msgs = defaultdict(lambda: deque(maxlen=10))
